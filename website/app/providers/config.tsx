@@ -1,6 +1,6 @@
 import { SiteConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import { getDefaultConfig } from "@databiosphere/findable-ui/lib/config/utils";
-import React, { createContext, ReactNode } from "react";
+import { createContext, ReactNode } from "react";
 
 export type ConfigContextProps = {
   config: SiteConfig;

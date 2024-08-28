@@ -1,7 +1,3 @@
 export const HomeView = (): JSX.Element => {
-  return (
-    <>
-      Home
-    </>
-  );
+  return <>Home</>;
 };
