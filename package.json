@@ -1,0 +1,17 @@
+{
+  "name": "brc-analytics",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install .husky"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0"
+  },
+  "engines": {
+    "node": "20.10.0"
+  }
+}
