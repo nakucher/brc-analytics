@@ -8,7 +8,8 @@
     "start": "npx serve out",
     "lint": "next lint --dir .",
     "check-format": "prettier --check .",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "build-brc-db": "esrun files/build-catalog.ts"
   },
   "dependencies": {
     "@databiosphere/findable-ui": "^10.2.0",
@@ -42,6 +43,7 @@
     "@types/uuid": "8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "babel-loader": "^8.2.5",
+    "csv-parse": "^5.5.6",
     "eslint": "^8.33.0",
     "eslint-config-next": "^14.1.0",
     "eslint-config-prettier": "^8.6.0",
@@ -52,6 +54,7 @@
     "eslint-plugin-sonarjs": "^0.18.0",
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
     "eslint-plugin-typescript-sort-keys": "^2.3.0",
+    "esrun": "^3.2.26",
     "gray-matter": "^4.0.3",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",

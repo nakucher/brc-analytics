@@ -6,6 +6,7 @@ import {
 } from "@databiosphere/findable-ui/lib/config/entities";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode";
 import { BRCDataCatalogGenome } from "../../../../app/apis/catalog/brc-analytics-catalog/common/entities";
+import { getGenomeId } from "../../../../app/apis/catalog/brc-analytics-catalog/common/utils";
 import * as C from "../../../../app/components/index";
 import * as V from "../../../../app/viewModelBuilders/catalog/brc-analytics-catalog/common/viewModelBuilders";
 import {
@@ -38,7 +39,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
   },
   exploreMode: EXPLORE_MODE.CS_FETCH_CS_FILTERING,
   explorerTitle: "Genomes",
-  getId: () => "", // TODO create actual ID function once the relevant fields are added
+  getId: getGenomeId,
   label: "Genomes",
   list: {
     columns: [
