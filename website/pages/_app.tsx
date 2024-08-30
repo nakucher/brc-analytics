@@ -1,9 +1,8 @@
 import "@databiosphere/findable-ui";
-import { AzulEntitiesStaticResponse } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { Error } from "@databiosphere/findable-ui/lib/components/Error/error";
 import { ErrorBoundary } from "@databiosphere/findable-ui/lib/components/ErrorBoundary";
 import { Head } from "@databiosphere/findable-ui/lib/components/Head/head";
-import { AppLayout } from "@databiosphere/findable-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
+import { AppLayout as DXAppLayout } from "@databiosphere/findable-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 import { Floating } from "@databiosphere/findable-ui/lib/components/Layout/components/Floating/floating";
 import { Footer } from "@databiosphere/findable-ui/lib/components/Layout/components/Footer/footer";
 import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
@@ -18,17 +17,20 @@ import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { config } from "../app/config/config";
 import { ConfigProvider } from "../app/providers/config";
+import { mergeAppTheme } from "../app/theme/theme";
 
-export interface PageProps extends AzulEntitiesStaticResponse {
+export interface PageProps {
   pageTitle?: string;
 }
 
 export type NextPageWithComponent = NextPage & {
+  AppLayout?: typeof DXAppLayout;
   Main?: typeof DXMain;
 };
 
 export type AppPropsWithComponent = AppProps & {
   Component: NextPageWithComponent;
+  pageProps: PageProps;
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
@@ -36,8 +38,10 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
   const appConfig = config();
   const { layout, redirectRootToPath, themeOptions } = appConfig;
   const { floating, footer, header } = layout || {};
-  const appTheme = createAppTheme(themeOptions);
-  const { pageTitle } = pageProps as PageProps;
+  const defaultTheme = createAppTheme(themeOptions);
+  const appTheme = mergeAppTheme(defaultTheme);
+  const { pageTitle } = pageProps;
+  const AppLayout = Component.AppLayout || DXAppLayout;
   const Main = Component.Main || DXMain;
   return (
     <EmotionThemeProvider theme={appTheme}>

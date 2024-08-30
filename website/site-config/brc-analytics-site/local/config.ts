@@ -29,6 +29,7 @@ export function makeConfig(browserUrl: string): SiteConfig {
       },
     },
     redirectRootToPath: "",
+    themeOptions: { palette: { primary: { main: "#FC5E60" } } },
   };
 }
 
