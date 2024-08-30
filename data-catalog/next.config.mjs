@@ -14,13 +14,15 @@ const withMDX = nextMDX({
 export default withPlugins(
   [[withMDX, { pageExtensions: ["md", "mdx", "ts", "tsx"] }]],
   {
-    basePath: "",
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
+    distDir: "out/data",
     experimental: {
       instrumentationHook: true,
     },
     images: {
       unoptimized: true,
     },
+    output: "export",
     reactStrictMode: true,
     transpilePackages: [...ESM_PACKAGES],
     webpack: (config) => {

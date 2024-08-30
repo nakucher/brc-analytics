@@ -21,6 +21,7 @@ export default withPlugins(
     images: {
       unoptimized: true,
     },
+    output: "export",
     reactStrictMode: true,
     transpilePackages: [...ESM_PACKAGES],
     webpack: (config) => {
