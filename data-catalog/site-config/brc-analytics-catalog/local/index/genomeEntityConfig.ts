@@ -26,6 +26,18 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
             key: BRC_DATA_CATALOG_CATEGORY_KEY.SPECIES,
             label: BRC_DATA_CATALOG_CATEGORY_LABEL.SPECIES,
           },
+          {
+            key: BRC_DATA_CATALOG_CATEGORY_KEY.STRAIN,
+            label: BRC_DATA_CATALOG_CATEGORY_LABEL.STRAIN,
+          },
+          {
+            key: BRC_DATA_CATALOG_CATEGORY_KEY.GENOME_VERSION_ASSEMBLY_ID,
+            label: BRC_DATA_CATALOG_CATEGORY_LABEL.GENOME_VERSION_ASSEMBLY_ID,
+          },
+          {
+            key: BRC_DATA_CATALOG_CATEGORY_KEY.VEUPATHDB_PROJECT,
+            label: BRC_DATA_CATALOG_CATEGORY_LABEL.VEUPATHDB_PROJECT,
+          },
         ],
       },
     ],
@@ -51,6 +63,60 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.SPECIES,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.SPECIES,
         width: { max: "1.5fr", min: "212px" },
+      },
+      {
+        componentConfig: {
+          component: C.BasicCell,
+          viewBuilder: V.buildStrain,
+        } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.STRAIN,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.STRAIN,
+        width: { max: "1fr", min: "160px" },
+      },
+      {
+        componentConfig: {
+          component: C.BasicCell,
+          viewBuilder: V.buildGenomeVersionAssemblyId,
+        } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.GENOME_VERSION_ASSEMBLY_ID,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.GENOME_VERSION_ASSEMBLY_ID,
+        width: { max: "1fr", min: "160px" },
+      },
+      {
+        componentConfig: {
+          component: C.BasicCell,
+          viewBuilder: V.buildVEuPathDbProject,
+        } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.VEUPATHDB_PROJECT,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.VEUPATHDB_PROJECT,
+        width: { max: "1fr", min: "160px" },
+      },
+      {
+        componentConfig: {
+          component: C.BasicCell,
+          viewBuilder: V.buildContigs,
+        } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.CONTIGS,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.CONTIGS,
+        width: { max: "0.5fr", min: "112px" },
+      },
+      {
+        componentConfig: {
+          component: C.BasicCell,
+          viewBuilder: V.buildSupercontigs,
+        } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.SUPERCONTIGS,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.SUPERCONTIGS,
+        width: { max: "0.5fr", min: "112px" },
+      },
+      {
+        componentConfig: {
+          component: C.BasicCell,
+          viewBuilder: V.buildChromosomes,
+        } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.CHROMOSOMES,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.CHROMOSOMES,
+        width: { max: "0.5fr", min: "112px" },
       },
     ],
     defaultSort: {
