@@ -1,4 +1,5 @@
 import { SiteConfig } from "@databiosphere/findable-ui/lib/config/entities";
+import * as C from "../../../app/components";
 
 // Template constants
 const LOCALHOST = "http://localhost:3000";
@@ -19,7 +20,12 @@ export function makeConfig(browserUrl: string): SiteConfig {
         Branding: "",
       },
       header: {
-        logo: "",
+        logo: C.Logo({
+          alt: APP_TITLE,
+          height: 26,
+          link: "/",
+          src: "/logo/brc.svg",
+        }),
       },
     },
     redirectRootToPath: "",
