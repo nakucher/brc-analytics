@@ -30,4 +30,4 @@ npm-debug.log*
 /public/favicons/*
 
 # Build Dir
-/build
+/out

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "./scripts/dev.sh brc-analytics-catalog && next dev",
     "build:local": "./scripts/build.sh brc-analytics-catalog local && next build",
-    "start": "next start",
+    "start": "npx serve out",
     "lint": "next lint --dir .",
     "check-format": "prettier --check .",
     "test": "jest --runInBand"

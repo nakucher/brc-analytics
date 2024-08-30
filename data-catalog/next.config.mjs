@@ -15,6 +15,7 @@ export default withPlugins(
   [[withMDX, { pageExtensions: ["md", "mdx", "ts", "tsx"] }]],
   {
     basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
+    distDir: "out/data",
     experimental: {
       instrumentationHook: true,
     },
