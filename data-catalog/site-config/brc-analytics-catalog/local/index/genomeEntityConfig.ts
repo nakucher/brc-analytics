@@ -118,6 +118,15 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         id: BRC_DATA_CATALOG_CATEGORY_KEY.CHROMOSOMES,
         width: { max: "0.5fr", min: "112px" },
       },
+      {
+        componentConfig: {
+          component: C.Link,
+          viewBuilder: V.buildUcscBrowserUrl,
+        } as ComponentConfig<typeof C.Link, BRCDataCatalogGenome>,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.UCSC_BROWSER_URL,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.UCSC_BROWSER_URL,
+        width: { max: "1fr", min: "160px" },
+      },
     ],
     defaultSort: {
       desc: SORT_DIRECTION.ASCENDING,

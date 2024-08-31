@@ -80,6 +80,25 @@ export const buildSupercontigs = (
 };
 
 /**
+ * Build props for the UCSC browser URL cell.
+ * @param genome - Genome entity.
+ * @returns Props to be used for the cell.
+ */
+export const buildUcscBrowserUrl = (
+  genome: BRCDataCatalogGenome
+): React.ComponentProps<typeof C.Link> => {
+  return genome.ucscBrowserUrl
+    ? {
+        label: "UCSC Browser",
+        url: genome.ucscBrowserUrl,
+      }
+    : {
+        label: "Unspecified",
+        url: "",
+      };
+};
+
+/**
  * Build props for the VEuPathDB project cell.
  * @param genome - Genome entity.
  * @returns Props to be used for the cell.

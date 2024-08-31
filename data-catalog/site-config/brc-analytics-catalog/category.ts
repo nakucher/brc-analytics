@@ -5,6 +5,7 @@ export const BRC_DATA_CATALOG_CATEGORY_KEY = {
   SPECIES: "species",
   STRAIN: "strain",
   SUPERCONTIGS: "supercontigs",
+  UCSC_BROWSER_URL: "ucscBrowserUrl",
   VEUPATHDB_PROJECT: "vEuPathDbProject",
 };
 
@@ -15,5 +16,6 @@ export const BRC_DATA_CATALOG_CATEGORY_LABEL = {
   SPECIES: "Species",
   STRAIN: "Strain",
   SUPERCONTIGS: "Supercontigs",
+  UCSC_BROWSER_URL: "UCSC Browser",
   VEUPATHDB_PROJECT: "VEuPathDB Project",
 };
