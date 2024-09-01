@@ -1,10 +1,10 @@
 import { ButtonPrimary } from "@databiosphere/findable-ui/lib/components/common/Button/components/ButtonPrimary/buttonPrimary";
 import { ROUTES } from "../../../../../../routes/constants";
-import { Section } from "../../section.styles";
 import {
   Head,
   Headline,
   SectionLayout,
+  StyledSection as Section,
   Subhead,
   SubHeadline,
   SubHeadlinePositioner,
