@@ -37,6 +37,7 @@ export const MuiCssBaseline = (theme: Theme): Components["MuiCssBaseline"] => {
     styleOverrides: {
       body: {
         ...theme.typography[TEXT_BODY_LARGE_400_2_LINES],
+        backgroundColor: theme.palette.smoke.lightest,
       },
     },
   };
