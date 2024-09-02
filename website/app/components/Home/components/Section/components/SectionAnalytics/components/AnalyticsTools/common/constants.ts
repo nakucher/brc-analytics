@@ -1,4 +1,5 @@
 import { CardProps as DXCardProps } from "@databiosphere/findable-ui/lib/components/common/Card/card";
+import { URLS } from "../../../../../../../common/constants";
 
 const CARD_ACTION_LABEL = {
   LEARN_MORE: "Learn More",
@@ -13,7 +14,7 @@ export const ANALYTICS_TOOLS: DXCardProps[] = [
     cardActions: [
       {
         label: CARD_ACTION_LABEL.LEARN_MORE,
-        url: "https://brc.usegalaxy.org",
+        url: URLS.GALAXY_SYSTEM,
       },
     ],
     media: {
@@ -28,7 +29,7 @@ export const ANALYTICS_TOOLS: DXCardProps[] = [
     cardActions: [
       {
         label: CARD_ACTION_LABEL.LEARN_MORE,
-        url: "https://www.ncbi.nlm.nih.gov/datasets",
+        url: URLS.NCBI_DATASETS,
       },
     ],
     media: {
@@ -43,7 +44,7 @@ export const ANALYTICS_TOOLS: DXCardProps[] = [
     cardActions: [
       {
         label: CARD_ACTION_LABEL.LEARN_MORE,
-        url: "https://genome.ucsc.edu/cgi-bin/hgTracks?db=hub_3099159_GCF_000002765.5&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr14%3A1097312-1107312&hgsid=2334740048_JURjoJTpdZ1arRgPWCUOn1kbfI2r",
+        url: URLS.UCSC_GENOME_BROWSER,
       },
     ],
     media: {
@@ -58,7 +59,7 @@ export const ANALYTICS_TOOLS: DXCardProps[] = [
     cardActions: [
       {
         label: CARD_ACTION_LABEL.LEARN_MORE,
-        url: "https://tacc.utexas.edu",
+        url: URLS.TACC,
       },
     ],
     media: {
