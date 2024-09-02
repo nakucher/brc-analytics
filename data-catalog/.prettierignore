@@ -3,3 +3,9 @@
 
 # dependencies
 node_modules
+
+# build
+/out
+
+# python
+venv
