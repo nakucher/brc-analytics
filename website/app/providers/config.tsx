@@ -11,6 +11,8 @@ export interface ConfigProps {
   config: SiteConfig;
 }
 
+// TODO(cc) do we need this?
+
 export const ConfigContext = createContext<ConfigContextProps>({
   config: getDefaultConfig(),
 });

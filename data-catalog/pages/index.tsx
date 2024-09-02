@@ -1,15 +1,12 @@
-import { Redirect } from "@databiosphere/findable-ui/lib/components/Redirect/redirect";
-import { useConfig } from "@databiosphere/findable-ui/lib/hooks/useConfig";
+import { StyledAppLayout } from "../app/components/Layout/components/AppLayout/appLayout.styles";
+import { StyledMain } from "../app/components/Layout/components/Main/main.styles";
+import { HomeView } from "../app/views/HomeView/homeView";
 
-const HomePage = (): JSX.Element => {
-  const { config } = useConfig();
-  const { redirectRootToPath } = config;
-
-  if (redirectRootToPath) {
-    return <Redirect destination={redirectRootToPath} replace />;
-  }
-
-  return <></>;
+export const Home = (): JSX.Element => {
+  return <HomeView />;
 };
 
-export default HomePage;
+export default Home;
+
+Home.AppLayout = StyledAppLayout;
+Home.Main = StyledMain;
