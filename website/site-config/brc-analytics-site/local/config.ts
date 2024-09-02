@@ -17,7 +17,7 @@ export function makeConfig(browserUrl: string): SiteConfig {
     explorerTitle: APP_TITLE,
     layout: {
       footer: {
-        Branding: "",
+        Branding: C.Branding(),
       },
       header: {
         logo: C.Logo({
