@@ -19,6 +19,7 @@ export {
 } from "@databiosphere/findable-ui/lib/components/Layout/components/BackPage/backPageView.styles";
 export { Link } from "@databiosphere/findable-ui/lib/components/Links/components/Link/link";
 export { BasicCell } from "@databiosphere/findable-ui/lib/components/Table/components/TableCell/components/BasicCell/basicCell";
+export { AnalysisMethod } from "./Entity/components/AnalysisMethod/analysisMethod";
 export { AnalysisPortals } from "./Entity/components/AnalysisPortals/analysisPortals";
 export { DetailViewHero } from "./Layout/components/Detail/components/DetailViewHero/detailViewHero";
 export { AnalyzeGenome } from "./Table/components/TableCell/components/AnalyzeGenome/analyzeGenome";

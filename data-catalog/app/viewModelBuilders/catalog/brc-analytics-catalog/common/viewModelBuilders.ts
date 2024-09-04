@@ -1,4 +1,5 @@
 import { Breadcrumb } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
+import { CardProps } from "@databiosphere/findable-ui/lib/components/common/Card/card";
 import {
   Key,
   Value,
@@ -45,6 +46,25 @@ export const buildContigs = (
 ): ComponentProps<typeof C.BasicCell> => {
   return {
     value: genome.contigs,
+  };
+};
+
+/**
+ * Build props for the genome AnalysisMethod component.
+ * @param genome - Genome entity.
+ * @param cardProps - Card properties.
+ * @param cardProps.text - Card text.
+ * @param cardProps.title - Card title.
+ * @returns Props to be used for the AnalysisMethod component.
+ */
+export const buildGenomeAnalysisMethod = (
+  genome: BRCDataCatalogGenome,
+  { text, title }: Partial<CardProps>
+): ComponentProps<typeof C.AnalysisMethod> => {
+  return {
+    text,
+    title,
+    url: "",
   };
 };
 
