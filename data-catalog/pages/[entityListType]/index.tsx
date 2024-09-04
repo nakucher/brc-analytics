@@ -1,4 +1,3 @@
-import { AzulEntitiesStaticResponse } from "@databiosphere/findable-ui/lib/apis/azul/common/entities";
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main.styles";
 import { EntityConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import { getEntityConfig } from "@databiosphere/findable-ui/lib/config/utils";
@@ -9,13 +8,18 @@ import { config } from "app/config/config";
 import fsp from "fs/promises";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
+import {
+  BRCCatalog,
+  EntitiesResponse,
+} from "../../app/apis/catalog/brc-analytics-catalog/common/entities";
 import { StyledExploreView } from "../../app/views/ExploreView/exploreView.styles";
 
 interface PageUrl extends ParsedUrlQuery {
   entityListType: string;
 }
 
-interface ListPageProps extends AzulEntitiesStaticResponse {
+interface ListPageProps<R> {
+  data?: EntitiesResponse<R>;
   entityListType: string;
 }
 
@@ -25,7 +29,7 @@ interface ListPageProps extends AzulEntitiesStaticResponse {
  * @param entityConfig - Entity config.
  * @returns Promise<void>.
  */
-const seedDatabase = async function seedDatabase( // TODO get rid of this duplicated code
+const seedDatabase = async function seedDatabase(
   entityListType: string,
   entityConfig: EntityConfig
 ): Promise<void> {
@@ -56,10 +60,10 @@ const seedDatabase = async function seedDatabase( // TODO get rid of this duplic
  * @param props.entityListType - Entity list type.
  * @returns ExploreView component.
  */
-const IndexPage = ({
+const IndexPage = <R,>({
   entityListType,
   ...props
-}: ListPageProps): JSX.Element => {
+}: ListPageProps<R>): JSX.Element => {
   if (!entityListType) return <></>;
   return <StyledExploreView entityListType={entityListType} {...props} />;
 };
@@ -87,9 +91,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
  * @param context - Object containing values related to the current context.
  * @returns static props.
  */
-export const getStaticProps: GetStaticProps<
-  AzulEntitiesStaticResponse
-> = async (context: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps<ListPageProps<BRCCatalog>> = async (
+  context: GetStaticPropsContext
+) => {
   const appConfig = config();
   const { entityListType } = context.params as PageUrl;
   const { entities } = appConfig;
@@ -97,7 +101,7 @@ export const getStaticProps: GetStaticProps<
   const { exploreMode } = entityConfig;
   const { fetchAllEntities } = getEntityService(entityConfig, undefined); // Determine the type of fetch, either from an API endpoint or a TSV.
 
-  const props: AzulEntitiesStaticResponse = { entityListType };
+  const props: ListPageProps<BRCCatalog> = { entityListType };
 
   // Seed database.
   if (exploreMode === EXPLORE_MODE.CS_FETCH_CS_FILTERING) {
