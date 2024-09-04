@@ -1,8 +1,13 @@
 import { Breadcrumb } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
+import {
+  Key,
+  Value,
+} from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
 import { ComponentProps } from "react";
 import { ROUTES } from "../../../../../routes/contants";
 import { BRCDataCatalogGenome } from "../../../../apis/catalog/brc-analytics-catalog/common/entities";
 import * as C from "../../../../components/index";
+import { GENOME_BROWSER } from "./constants";
 
 /**
  * Build props for the genome analysis cell.
@@ -44,6 +49,29 @@ export const buildContigs = (
 };
 
 /**
+ * Build props for the genome AnalysisPortals component.
+ * @param genome - Genome entity.
+ * @returns Props to be used for the AnalysisPortals component.
+ */
+export const buildGenomeAnalysisPortals = (
+  genome: BRCDataCatalogGenome
+): ComponentProps<typeof C.AnalysisPortals> => {
+  return {
+    portals: [
+      {
+        imageProps: {
+          alt: GENOME_BROWSER,
+          src: "/analysis-portals/ucsc-genome.svg",
+          width: 20,
+        },
+        label: GENOME_BROWSER,
+        url: genome.ucscBrowserUrl,
+      },
+    ],
+  };
+};
+
+/**
  * Build props for the genome DetailViewHero component.
  * @param genome - Genome entity.
  * @returns Props to be used for the DetailViewHero component.
@@ -56,6 +84,30 @@ export const buildGenomeChooseAnalysisMethodDetailViewHero = (
       breadcrumbs: getGenomeEntityChooseAnalysisMethodBreadcrumbs(genome),
     }),
     title: "Choose Analysis Methods",
+  };
+};
+
+/**
+ * Build props for the genome detail KeyValuePairs component.
+ * @param genome - Genome entity.
+ * @returns Props to be used for the KeyValuePairs component.
+ */
+export const buildGenomeDetails = (
+  genome: BRCDataCatalogGenome
+): ComponentProps<typeof C.KeyValuePairs> => {
+  const keyValuePairs = new Map<Key, Value>();
+  keyValuePairs.set("Species", genome.species);
+  keyValuePairs.set("Strain", genome.strain);
+  keyValuePairs.set("Genome Version", genome.genomeVersionAssemblyId);
+  keyValuePairs.set("VeUPathDB Project", genome.vEuPathDbProject);
+  keyValuePairs.set("Contigs", genome.contigs);
+  keyValuePairs.set("Super Contigs", genome.supercontigs);
+  keyValuePairs.set("Chromosomes", genome.chromosomes);
+  return {
+    KeyElType: C.KeyElType,
+    KeyValuesElType: (props) => C.Stack({ gap: 4, ...props }),
+    ValueElType: C.ValueElType,
+    keyValuePairs,
   };
 };
 

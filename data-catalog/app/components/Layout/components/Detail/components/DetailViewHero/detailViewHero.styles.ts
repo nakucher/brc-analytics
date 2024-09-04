@@ -8,6 +8,7 @@ export const DetailViewHero = styled.div`
   display: grid;
   gap: 16px;
   grid-column: 1 / -1;
+  margin-bottom: 8px;
 `;
 
 export const DetailViewHeroHeadline = styled.div`

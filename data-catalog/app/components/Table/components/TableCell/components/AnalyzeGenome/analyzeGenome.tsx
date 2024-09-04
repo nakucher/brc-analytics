@@ -1,4 +1,7 @@
-import { ANCHOR_TARGET } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
+import {
+  ANCHOR_TARGET,
+  REL_ATTRIBUTE,
+} from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Button } from "@mui/material";
 import Router from "next/router";
 import { ROUTES } from "../../../../../../../routes/contants";
@@ -25,7 +28,7 @@ export const AnalyzeGenome = ({ genome }: AnalyzeGenomeProps): JSX.Element => {
 
   const onView = (url: string | null): void => {
     if (!url) return;
-    window.open(url, ANCHOR_TARGET.BLANK);
+    window.open(url, ANCHOR_TARGET.BLANK, REL_ATTRIBUTE.NO_OPENER_NO_REFERRER);
   };
 
   return (
