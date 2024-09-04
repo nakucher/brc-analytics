@@ -1,58 +1,25 @@
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main.styles";
-import { EntityConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import { getEntityConfig } from "@databiosphere/findable-ui/lib/config/utils";
 import { getEntityService } from "@databiosphere/findable-ui/lib/hooks/useEntityService";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode";
-import { database } from "@databiosphere/findable-ui/lib/utils/database";
 import { config } from "app/config/config";
-import fsp from "fs/promises";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import {
   BRCCatalog,
   EntitiesResponse,
 } from "../../app/apis/catalog/brc-analytics-catalog/common/entities";
+import { seedDatabase } from "../../app/utils/seedDatabase";
 import { StyledExploreView } from "../../app/views/ExploreView/exploreView.styles";
 
 interface PageUrl extends ParsedUrlQuery {
   entityListType: string;
 }
 
-interface ListPageProps<R> {
+interface EntitiesPageProps<R> {
   data?: EntitiesResponse<R>;
   entityListType: string;
 }
-
-/**
- * Seed database.
- * @param entityListType - Entity list type.
- * @param entityConfig - Entity config.
- * @returns Promise<void>.
- */
-const seedDatabase = async function seedDatabase(
-  entityListType: string,
-  entityConfig: EntityConfig
-): Promise<void> {
-  const { label, staticLoadFile } = entityConfig;
-
-  if (!staticLoadFile) {
-    throw new Error(`staticLoadFile not found for entity entity ${label}`);
-  }
-
-  // Build database from configured JSON, if any.
-  let jsonText;
-  try {
-    jsonText = await fsp.readFile(staticLoadFile, "utf8");
-  } catch (e) {
-    throw new Error(`File ${staticLoadFile} not found for entity ${label}`);
-  }
-
-  const object = JSON.parse(jsonText);
-  const entities = Object.values(object); // Client-side fetched entities are mapped prior to dispatch to explore state.
-
-  // Seed entities.
-  database.get().seed(entityListType, entities);
-};
 
 /**
  * Explore view page.
@@ -63,7 +30,7 @@ const seedDatabase = async function seedDatabase(
 const IndexPage = <R,>({
   entityListType,
   ...props
-}: ListPageProps<R>): JSX.Element => {
+}: EntitiesPageProps<R>): JSX.Element => {
   if (!entityListType) return <></>;
   return <StyledExploreView entityListType={entityListType} {...props} />;
 };
@@ -91,9 +58,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
  * @param context - Object containing values related to the current context.
  * @returns static props.
  */
-export const getStaticProps: GetStaticProps<ListPageProps<BRCCatalog>> = async (
-  context: GetStaticPropsContext
-) => {
+export const getStaticProps: GetStaticProps<
+  EntitiesPageProps<BRCCatalog>
+> = async (context: GetStaticPropsContext) => {
   const appConfig = config();
   const { entityListType } = context.params as PageUrl;
   const { entities } = appConfig;
@@ -101,7 +68,7 @@ export const getStaticProps: GetStaticProps<ListPageProps<BRCCatalog>> = async (
   const { exploreMode } = entityConfig;
   const { fetchAllEntities } = getEntityService(entityConfig, undefined); // Determine the type of fetch, either from an API endpoint or a TSV.
 
-  const props: ListPageProps<BRCCatalog> = { entityListType };
+  const props: EntitiesPageProps<BRCCatalog> = { entityListType };
 
   // Seed database.
   if (exploreMode === EXPLORE_MODE.CS_FETCH_CS_FILTERING) {

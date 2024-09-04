@@ -13,6 +13,7 @@ import {
   BRC_DATA_CATALOG_CATEGORY_KEY,
   BRC_DATA_CATALOG_CATEGORY_LABEL,
 } from "../../category";
+import { mainColumn as analysisMethodsMainColumn } from "../entity/genome/analysisMethodMainColumn";
 
 /**
  * Entity config object responsible to config anything related to the /genomes route.
@@ -45,8 +46,14 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
   },
   detail: {
     detailOverviews: [],
-    staticLoad: false,
-    tabs: [],
+    staticLoad: true,
+    tabs: [
+      {
+        label: "Analysis Methods",
+        mainColumn: analysisMethodsMainColumn,
+        route: "",
+      },
+    ],
     top: [],
   },
   exploreMode: EXPLORE_MODE.CS_FETCH_CS_FILTERING,
