@@ -1,24 +1,29 @@
 import {
   ComponentConfig,
-  EntityConfig,
   ListConfig,
   SORT_DIRECTION,
 } from "@databiosphere/findable-ui/lib/config/entities";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode";
 import { BRCDataCatalogGenome } from "../../../../app/apis/catalog/brc-analytics-catalog/common/entities";
-import { getGenomeId } from "../../../../app/apis/catalog/brc-analytics-catalog/common/utils";
+import {
+  getGenomeId,
+  getGenomeTitle,
+} from "../../../../app/apis/catalog/brc-analytics-catalog/common/utils";
 import * as C from "../../../../app/components/index";
 import * as V from "../../../../app/viewModelBuilders/catalog/brc-analytics-catalog/common/viewModelBuilders";
+import { BRCEntityConfig } from "../../../common/entities";
 import {
   BRC_DATA_CATALOG_CATEGORY_KEY,
   BRC_DATA_CATALOG_CATEGORY_LABEL,
 } from "../../category";
 import { mainColumn as analysisMethodsMainColumn } from "../entity/genome/analysisMethodMainColumn";
+import { sideColumn as analysisMethodsSideColumn } from "../entity/genome/analysisMethodsSideColumn";
+import { top as analysisMethodsTop } from "../entity/genome/analysisMethodsTop";
 
 /**
  * Entity config object responsible to config anything related to the /genomes route.
  */
-export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
+export const genomeEntityConfig: BRCEntityConfig<BRCDataCatalogGenome> = {
   categoryGroupConfig: {
     categoryGroups: [
       {
@@ -49,16 +54,18 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
     staticLoad: true,
     tabs: [
       {
-        label: "Analysis Methods",
+        label: "Choose Analysis Method",
         mainColumn: analysisMethodsMainColumn,
         route: "",
+        sideColumn: analysisMethodsSideColumn,
+        top: analysisMethodsTop,
       },
     ],
-    top: [],
   },
   exploreMode: EXPLORE_MODE.CS_FETCH_CS_FILTERING,
   explorerTitle: "Genomes",
   getId: getGenomeId,
+  getTitle: getGenomeTitle,
   label: "Genomes",
   list: {
     columns: [
@@ -67,6 +74,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
           component: C.AnalyzeGenome,
           viewBuilder: V.buildAnalyzeGenome,
         } as ComponentConfig<typeof C.AnalyzeGenome, BRCDataCatalogGenome>,
+        disableSorting: true,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.ANALYZE_GENOME,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.ANALYZE_GENOME,
         width: "auto",

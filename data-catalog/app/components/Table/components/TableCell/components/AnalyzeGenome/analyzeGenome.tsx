@@ -34,6 +34,7 @@ export const AnalyzeGenome = ({ genome }: AnalyzeGenomeProps): JSX.Element => {
       Buttons={[
         <Button
           {...BUTTON_PROPS}
+          disabled={!genomeVersionAssemblyId}
           key="analyze"
           onClick={(): void => onAnalyze(genomeVersionAssemblyId)}
         >

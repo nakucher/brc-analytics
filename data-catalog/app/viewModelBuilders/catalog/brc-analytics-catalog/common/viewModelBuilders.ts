@@ -1,3 +1,6 @@
+import { Breadcrumb } from "@databiosphere/findable-ui/lib/components/common/Breadcrumbs/breadcrumbs";
+import { ComponentProps } from "react";
+import { ROUTES } from "../../../../../routes/contants";
 import { BRCDataCatalogGenome } from "../../../../apis/catalog/brc-analytics-catalog/common/entities";
 import * as C from "../../../../components/index";
 
@@ -8,7 +11,7 @@ import * as C from "../../../../components/index";
  */
 export const buildAnalyzeGenome = (
   genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.AnalyzeGenome> => {
+): ComponentProps<typeof C.AnalyzeGenome> => {
   return {
     genome,
   };
@@ -21,7 +24,7 @@ export const buildAnalyzeGenome = (
  */
 export const buildChromosomes = (
   genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.BasicCell> => {
+): ComponentProps<typeof C.BasicCell> => {
   return {
     value: genome.chromosomes,
   };
@@ -34,9 +37,25 @@ export const buildChromosomes = (
  */
 export const buildContigs = (
   genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.BasicCell> => {
+): ComponentProps<typeof C.BasicCell> => {
   return {
     value: genome.contigs,
+  };
+};
+
+/**
+ * Build props for the genome DetailViewHero component.
+ * @param genome - Genome entity.
+ * @returns Props to be used for the DetailViewHero component.
+ */
+export const buildGenomeChooseAnalysisMethodDetailViewHero = (
+  genome: BRCDataCatalogGenome
+): ComponentProps<typeof C.DetailViewHero> => {
+  return {
+    breadcrumbs: C.Breadcrumbs({
+      breadcrumbs: getGenomeEntityChooseAnalysisMethodBreadcrumbs(genome),
+    }),
+    title: "Choose Analysis Methods",
   };
 };
 
@@ -47,7 +66,7 @@ export const buildContigs = (
  */
 export const buildGenomeVersionAssemblyId = (
   genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.BasicCell> => {
+): ComponentProps<typeof C.BasicCell> => {
   return {
     value: genome.genomeVersionAssemblyId,
   };
@@ -60,7 +79,7 @@ export const buildGenomeVersionAssemblyId = (
  */
 export const buildSpecies = (
   genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.BasicCell> => {
+): ComponentProps<typeof C.BasicCell> => {
   return {
     value: genome.species,
   };
@@ -73,7 +92,7 @@ export const buildSpecies = (
  */
 export const buildStrain = (
   genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.BasicCell> => {
+): ComponentProps<typeof C.BasicCell> => {
   return {
     value: genome.strain,
   };
@@ -86,38 +105,36 @@ export const buildStrain = (
  */
 export const buildSupercontigs = (
   genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.BasicCell> => {
+): ComponentProps<typeof C.BasicCell> => {
   return {
     value: genome.supercontigs,
   };
 };
 
 /**
-<<<<<<< HEAD
- * Build props for the UCSC browser URL cell.
- * @param genome - Genome entity.
- * @returns Props to be used for the cell.
- */
-export const buildUcscBrowserUrl = (
-  genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.Link> => {
-  return {
-    label: "UCSC Browser",
-    url: genome.ucscBrowserUrl,
-  };
-};
-
-/**
-=======
->>>>>>> 94283b9 (feat: add 'analysis' section (#18))
  * Build props for the VEuPathDB project cell.
  * @param genome - Genome entity.
  * @returns Props to be used for the cell.
  */
 export const buildVEuPathDbProject = (
   genome: BRCDataCatalogGenome
-): React.ComponentProps<typeof C.BasicCell> => {
+): ComponentProps<typeof C.BasicCell> => {
   return {
     value: genome.vEuPathDbProject,
   };
 };
+
+/**
+ * Get the genome entity breadcrumbs.
+ * @param genome - Genome entity.
+ * @returns Breadcrumbs.
+ */
+function getGenomeEntityChooseAnalysisMethodBreadcrumbs(
+  genome: BRCDataCatalogGenome
+): Breadcrumb[] {
+  return [
+    { path: ROUTES.GENOMES, text: "Genomes" },
+    { path: "", text: `${genome.species} - ${genome.strain}` },
+    { path: "", text: "Choose Analysis Methods" },
+  ];
+}

@@ -17,6 +17,7 @@ import {
   EntitiesResponse,
 } from "../../app/apis/catalog/brc-analytics-catalog/common/entities";
 import { seedDatabase } from "../../app/utils/seedDatabase";
+import { EntityDetailView } from "../../app/views/EntityView/entityView";
 
 const setOfProcessedIds = new Set<string>();
 
@@ -41,7 +42,7 @@ export interface EntityPageProps<R> {
  */
 const EntityDetailPage = <R,>(props: EntityPageProps<R>): JSX.Element => {
   if (!props.entityListType) return <></>;
-  return <div>{props.entityListType}</div>;
+  return <EntityDetailView {...props} />;
 };
 
 /**
