@@ -1,4 +1,5 @@
 export const BRC_DATA_CATALOG_CATEGORY_KEY = {
+  ANALYZE_GENOME: "analyzeGenome",
   CHROMOSOMES: "chromosomes",
   CONTIGS: "contigs",
   GENOME_VERSION_ASSEMBLY_ID: "genomeVersionAssemblyId",
@@ -10,6 +11,7 @@ export const BRC_DATA_CATALOG_CATEGORY_KEY = {
 };
 
 export const BRC_DATA_CATALOG_CATEGORY_LABEL = {
+  ANALYZE_GENOME: "Action",
   CHROMOSOMES: "Chromosomes",
   CONTIGS: "Contigs",
   GENOME_VERSION_ASSEMBLY_ID: "Genome Version/Assembly ID",

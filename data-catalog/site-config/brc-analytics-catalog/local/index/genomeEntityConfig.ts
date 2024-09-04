@@ -57,12 +57,21 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
     columns: [
       {
         componentConfig: {
+          component: C.AnalyzeGenome,
+          viewBuilder: V.buildAnalyzeGenome,
+        } as ComponentConfig<typeof C.AnalyzeGenome, BRCDataCatalogGenome>,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.ANALYZE_GENOME,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.ANALYZE_GENOME,
+        width: "auto",
+      },
+      {
+        componentConfig: {
           component: C.BasicCell,
           viewBuilder: V.buildSpecies,
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.SPECIES,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.SPECIES,
-        width: { max: "1.5fr", min: "212px" },
+        width: { max: "1fr", min: "284px" },
       },
       {
         componentConfig: {
@@ -71,16 +80,17 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.STRAIN,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.STRAIN,
-        width: { max: "1fr", min: "160px" },
+        width: { max: "1fr", min: "124px" },
       },
       {
+        columnPinned: true,
         componentConfig: {
           component: C.BasicCell,
           viewBuilder: V.buildGenomeVersionAssemblyId,
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.GENOME_VERSION_ASSEMBLY_ID,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.GENOME_VERSION_ASSEMBLY_ID,
-        width: { max: "1fr", min: "160px" },
+        width: { max: "1fr", min: "164px" },
       },
       {
         componentConfig: {
@@ -89,7 +99,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.VEUPATHDB_PROJECT,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.VEUPATHDB_PROJECT,
-        width: { max: "1fr", min: "160px" },
+        width: { max: "1fr", min: "140px" },
       },
       {
         componentConfig: {
@@ -98,7 +108,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.CONTIGS,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.CONTIGS,
-        width: { max: "0.5fr", min: "112px" },
+        width: { max: "0.5fr", min: "100px" },
       },
       {
         componentConfig: {
@@ -107,7 +117,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.SUPERCONTIGS,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.SUPERCONTIGS,
-        width: { max: "0.5fr", min: "112px" },
+        width: { max: "0.5fr", min: "140px" },
       },
       {
         componentConfig: {
@@ -116,16 +126,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.CHROMOSOMES,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.CHROMOSOMES,
-        width: { max: "0.5fr", min: "112px" },
-      },
-      {
-        componentConfig: {
-          component: C.Link,
-          viewBuilder: V.buildUcscBrowserUrl,
-        } as ComponentConfig<typeof C.Link, BRCDataCatalogGenome>,
-        header: BRC_DATA_CATALOG_CATEGORY_LABEL.UCSC_BROWSER_URL,
-        id: BRC_DATA_CATALOG_CATEGORY_KEY.UCSC_BROWSER_URL,
-        width: { max: "1fr", min: "160px" },
+        width: { max: "0.5fr", min: "142px" },
       },
     ],
     defaultSort: {

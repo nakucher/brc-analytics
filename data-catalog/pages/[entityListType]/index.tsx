@@ -5,11 +5,11 @@ import { getEntityConfig } from "@databiosphere/findable-ui/lib/config/utils";
 import { getEntityService } from "@databiosphere/findable-ui/lib/hooks/useEntityService";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode";
 import { database } from "@databiosphere/findable-ui/lib/utils/database";
-import { ExploreView } from "@databiosphere/findable-ui/lib/views/ExploreView/exploreView";
 import { config } from "app/config/config";
 import fsp from "fs/promises";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
+import { StyledExploreView } from "../../app/views/ExploreView/exploreView.styles";
 
 interface PageUrl extends ParsedUrlQuery {
   entityListType: string;
@@ -61,7 +61,7 @@ const IndexPage = ({
   ...props
 }: ListPageProps): JSX.Element => {
   if (!entityListType) return <></>;
-  return <ExploreView entityListType={entityListType} {...props} />;
+  return <StyledExploreView entityListType={entityListType} {...props} />;
 };
 
 /**

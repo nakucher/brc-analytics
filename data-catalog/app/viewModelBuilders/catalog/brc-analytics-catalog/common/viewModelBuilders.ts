@@ -2,6 +2,19 @@ import { BRCDataCatalogGenome } from "../../../../apis/catalog/brc-analytics-cat
 import * as C from "../../../../components/index";
 
 /**
+ * Build props for the genome analysis cell.
+ * @param genome - Genome entity.
+ * @returns Props to be used for the AnalyzeGenome component.
+ */
+export const buildAnalyzeGenome = (
+  genome: BRCDataCatalogGenome
+): React.ComponentProps<typeof C.AnalyzeGenome> => {
+  return {
+    genome,
+  };
+};
+
+/**
  * Build props for the chromosomes cell.
  * @param genome - Genome entity.
  * @returns Props to be used for the cell.
@@ -80,6 +93,7 @@ export const buildSupercontigs = (
 };
 
 /**
+<<<<<<< HEAD
  * Build props for the UCSC browser URL cell.
  * @param genome - Genome entity.
  * @returns Props to be used for the cell.
@@ -94,6 +108,8 @@ export const buildUcscBrowserUrl = (
 };
 
 /**
+=======
+>>>>>>> 94283b9 (feat: add 'analysis' section (#18))
  * Build props for the VEuPathDB project cell.
  * @param genome - Genome entity.
  * @returns Props to be used for the cell.
