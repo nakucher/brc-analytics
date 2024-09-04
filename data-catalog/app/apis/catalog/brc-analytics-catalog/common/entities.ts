@@ -6,6 +6,6 @@ export interface BRCDataCatalogGenome {
   species: string;
   strain: string;
   supercontigs: number;
-  ucscBrowserUrl: string | null;
+  ucscBrowserUrl: string;
   vEuPathDbProject: string;
 }

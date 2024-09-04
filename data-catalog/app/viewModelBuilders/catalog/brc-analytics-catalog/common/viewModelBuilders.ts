@@ -87,15 +87,10 @@ export const buildSupercontigs = (
 export const buildUcscBrowserUrl = (
   genome: BRCDataCatalogGenome
 ): React.ComponentProps<typeof C.Link> => {
-  return genome.ucscBrowserUrl
-    ? {
-        label: "UCSC Browser",
-        url: genome.ucscBrowserUrl,
-      }
-    : {
-        label: "Unspecified",
-        url: "",
-      };
+  return {
+    label: "UCSC Browser",
+    url: genome.ucscBrowserUrl,
+  };
 };
 
 /**

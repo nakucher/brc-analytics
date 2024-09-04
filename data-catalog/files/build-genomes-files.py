@@ -16,7 +16,7 @@ def build_genomes_files():
   gen_bank_merge_df = genomes_source_df.merge(assemblies_df, how="left", left_on="Genome Version/Assembly ID", right_on="genBank")
   ref_seq_merge_df = genomes_source_df.merge(assemblies_df, how="left", left_on="Genome Version/Assembly ID", right_on="refSeq")
 
-  result_df = gen_bank_merge_df.combine_first(ref_seq_merge_df)
+  result_df = gen_bank_merge_df.combine_first(ref_seq_merge_df).dropna(subset=["ucscBrowser"])
 
   result_df.to_csv(OUTPUT_PATH, index=False, sep="\t")
 

@@ -27,7 +27,7 @@ async function buildGenomes(): Promise<BRCDataCatalogGenome[]> {
       species: row.Species,
       strain: row.Strain,
       supercontigs: parseNumber(row.Supercontigs),
-      ucscBrowserUrl: parseStringOrNull(row.ucscBrowser),
+      ucscBrowserUrl: row.ucscBrowser,
       vEuPathDbProject: row["VEuPathDB Project"],
     })
   );
@@ -50,10 +50,6 @@ async function readValuesFile<T>(
 
 async function saveJson(filePath: string, data: unknown): Promise<void> {
   await fsp.writeFile(filePath, JSON.stringify(data, undefined, 2) + "\n");
-}
-
-function parseStringOrNull(value: string): string | null {
-  return value || null;
 }
 
 function parseNumber(value: string): number {
