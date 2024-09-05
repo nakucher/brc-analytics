@@ -3,7 +3,7 @@ import { EntityConfig } from "@databiosphere/findable-ui/src/config/entities";
 import { BRCDataCatalogGenome } from "../../../app/apis/catalog/brc-analytics-catalog/common/entities";
 import * as C from "../../../app/components";
 import * as P from "../../../app/theme/common/palette";
-import { ROUTES } from "../../../routes/contants";
+import { ROUTES } from "../../../routes/constants";
 import { genomeEntityConfig } from "./index/genomeEntityConfig";
 
 const LOCALHOST = "http://localhost:3000";

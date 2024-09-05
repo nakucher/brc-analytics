@@ -4,7 +4,7 @@ import {
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
 import { Button, Tooltip } from "@mui/material";
 import Router from "next/router";
-import { ROUTES } from "../../../../../../../routes/contants";
+import { ROUTES } from "../../../../../../../routes/constants";
 import { BRCDataCatalogGenome } from "../../../../../../apis/catalog/brc-analytics-catalog/common/entities";
 import { AnalyzeGenomeIcon } from "../../../../../common/CustomIcon/components/AnalyzeGenomeIcon/analyzeGenomeIcon";
 import { ViewGenomeIcon } from "../../../../../common/CustomIcon/components/ViewGenomeIcon/viewGenomeIcon";

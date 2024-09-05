@@ -5,7 +5,7 @@ import {
   Value,
 } from "@databiosphere/findable-ui/lib/components/common/KeyValuePairs/keyValuePairs";
 import { ComponentProps } from "react";
-import { ROUTES } from "../../../../../routes/contants";
+import { ROUTES } from "../../../../../routes/constants";
 import { BRCDataCatalogGenome } from "../../../../apis/catalog/brc-analytics-catalog/common/entities";
 import * as C from "../../../../components";
 import { GENOME_BROWSER } from "./constants";

@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { ROUTES } from "../../../../../../../routes/contants";
+import { ROUTES } from "../../../../../../../routes/constants";
 import {
   Head,
   Headline,
