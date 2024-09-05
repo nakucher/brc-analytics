@@ -3,33 +3,24 @@
 
 echo '🏗️👷 Checking your project before committing'
 
-for app in "website" "data-catalog"
-do
-    echo "\nChecking $app"
+# Check Prettier
+npm run check-format ||
+(
+    echo '🤔 Prettier Check Failed. Run npx prettier --write . try commit again.';
+    false;
+)
 
-    cd "./$app"
-
-    # Check Prettier
-    npm run check-format ||
-    (
-        echo '🤔 Prettier Check Failed. Run npx prettier --write . try commit again.';
+# Check ESLint
+npm run lint ||
+(
+        echo '🤔  ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.'
         false;
-    )
+)
 
-    # Check ESLint
-    npm run lint ||
-    (
-            echo '🤔  ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.'
-            false; 
-    )
-
-    # Check TypeScript
-    npx tsc --noEmit ||
-    (
-        echo 'TypeScript compile failed';
-        false;
-    )
-    echo 'TypeScript compile succeeded!'
-
-    cd ..
-done
+# Check TypeScript
+npx tsc --noEmit ||
+(
+	echo 'TypeScript compile failed';
+	false;
+)
+echo 'TypeScript compile succeeded!'

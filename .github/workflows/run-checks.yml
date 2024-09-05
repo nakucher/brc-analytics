@@ -10,12 +10,6 @@ jobs:
         with:
           node-version: "20.10.0"
       - run: |
-          cd ./website
-          npm ci
-          npm run check-format
-          npm run lint
-          npx tsc --noEmit
-          cd ../data-catalog
           npm ci
           npm run check-format
           npm run lint
