@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { ROUTES } from "../../../../../../../routes/contants";
+import { Hero } from "../../../../../Layout/components/Hero/hero";
 import {
   Head,
   Headline,
@@ -13,6 +14,7 @@ import {
 export const SectionHero = (): JSX.Element => {
   return (
     <Section>
+      <Hero />
       <SectionLayout>
         <Headline>
           <Head>
