@@ -11,6 +11,7 @@ export const sectionGrid = css`
 
 export const Section = styled.section`
   width: 100%;
+  z-index: 1;
 `;
 
 export const SectionLayout = styled.div`

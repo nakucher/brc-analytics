@@ -15,7 +15,14 @@ import {
 } from "../../section.styles";
 
 export const StyledSection = styled(Section)`
-  background: url("/hero/hero.svg") 0 0 repeat, ${smokeLightest};
+  background: ${smokeLightest};
+  position: relative;
+
+  svg {
+    left: 0;
+    position: fixed;
+    z-index: -1;
+  }
 `;
 
 export const SectionLayout = styled(DefaultLayout)`
