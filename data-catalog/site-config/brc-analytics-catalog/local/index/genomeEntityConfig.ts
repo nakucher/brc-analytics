@@ -1,23 +1,29 @@
 import {
   ComponentConfig,
-  EntityConfig,
   ListConfig,
   SORT_DIRECTION,
 } from "@databiosphere/findable-ui/lib/config/entities";
 import { EXPLORE_MODE } from "@databiosphere/findable-ui/lib/hooks/useExploreMode";
 import { BRCDataCatalogGenome } from "../../../../app/apis/catalog/brc-analytics-catalog/common/entities";
-import { getGenomeId } from "../../../../app/apis/catalog/brc-analytics-catalog/common/utils";
+import {
+  getGenomeId,
+  getGenomeTitle,
+} from "../../../../app/apis/catalog/brc-analytics-catalog/common/utils";
 import * as C from "../../../../app/components/index";
 import * as V from "../../../../app/viewModelBuilders/catalog/brc-analytics-catalog/common/viewModelBuilders";
+import { BRCEntityConfig } from "../../../common/entities";
 import {
   BRC_DATA_CATALOG_CATEGORY_KEY,
   BRC_DATA_CATALOG_CATEGORY_LABEL,
 } from "../../category";
+import { mainColumn as analysisMethodsMainColumn } from "../entity/genome/analysisMethodMainColumn";
+import { sideColumn as analysisMethodsSideColumn } from "../entity/genome/analysisMethodsSideColumn";
+import { top as analysisMethodsTop } from "../entity/genome/analysisMethodsTop";
 
 /**
  * Entity config object responsible to config anything related to the /genomes route.
  */
-export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
+export const genomeEntityConfig: BRCEntityConfig<BRCDataCatalogGenome> = {
   categoryGroupConfig: {
     categoryGroups: [
       {
@@ -45,16 +51,34 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
   },
   detail: {
     detailOverviews: [],
-    staticLoad: false,
-    tabs: [],
-    top: [],
+    staticLoad: true,
+    tabs: [
+      {
+        label: "Choose Analysis Method",
+        mainColumn: analysisMethodsMainColumn,
+        route: "",
+        sideColumn: analysisMethodsSideColumn,
+        top: analysisMethodsTop,
+      },
+    ],
   },
   exploreMode: EXPLORE_MODE.CS_FETCH_CS_FILTERING,
   explorerTitle: "Genomes",
   getId: getGenomeId,
+  getTitle: getGenomeTitle,
   label: "Genomes",
   list: {
     columns: [
+      {
+        componentConfig: {
+          component: C.AnalyzeGenome,
+          viewBuilder: V.buildAnalyzeGenome,
+        } as ComponentConfig<typeof C.AnalyzeGenome, BRCDataCatalogGenome>,
+        disableSorting: true,
+        header: BRC_DATA_CATALOG_CATEGORY_LABEL.ANALYZE_GENOME,
+        id: BRC_DATA_CATALOG_CATEGORY_KEY.ANALYZE_GENOME,
+        width: "auto",
+      },
       {
         componentConfig: {
           component: C.BasicCell,
@@ -62,7 +86,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.SPECIES,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.SPECIES,
-        width: { max: "1.5fr", min: "212px" },
+        width: { max: "1fr", min: "284px" },
       },
       {
         componentConfig: {
@@ -71,16 +95,17 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.STRAIN,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.STRAIN,
-        width: { max: "1fr", min: "160px" },
+        width: { max: "1fr", min: "124px" },
       },
       {
+        columnPinned: true,
         componentConfig: {
           component: C.BasicCell,
           viewBuilder: V.buildGenomeVersionAssemblyId,
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.GENOME_VERSION_ASSEMBLY_ID,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.GENOME_VERSION_ASSEMBLY_ID,
-        width: { max: "1fr", min: "160px" },
+        width: { max: "1fr", min: "164px" },
       },
       {
         componentConfig: {
@@ -89,7 +114,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.VEUPATHDB_PROJECT,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.VEUPATHDB_PROJECT,
-        width: { max: "1fr", min: "160px" },
+        width: { max: "1fr", min: "140px" },
       },
       {
         componentConfig: {
@@ -98,7 +123,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.CONTIGS,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.CONTIGS,
-        width: { max: "0.5fr", min: "112px" },
+        width: { max: "0.5fr", min: "100px" },
       },
       {
         componentConfig: {
@@ -107,7 +132,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.SUPERCONTIGS,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.SUPERCONTIGS,
-        width: { max: "0.5fr", min: "112px" },
+        width: { max: "0.5fr", min: "140px" },
       },
       {
         componentConfig: {
@@ -116,16 +141,7 @@ export const genomeEntityConfig: EntityConfig<BRCDataCatalogGenome> = {
         } as ComponentConfig<typeof C.BasicCell, BRCDataCatalogGenome>,
         header: BRC_DATA_CATALOG_CATEGORY_LABEL.CHROMOSOMES,
         id: BRC_DATA_CATALOG_CATEGORY_KEY.CHROMOSOMES,
-        width: { max: "0.5fr", min: "112px" },
-      },
-      {
-        componentConfig: {
-          component: C.Link,
-          viewBuilder: V.buildUcscBrowserUrl,
-        } as ComponentConfig<typeof C.Link, BRCDataCatalogGenome>,
-        header: BRC_DATA_CATALOG_CATEGORY_LABEL.UCSC_BROWSER_URL,
-        id: BRC_DATA_CATALOG_CATEGORY_KEY.UCSC_BROWSER_URL,
-        width: { max: "1fr", min: "160px" },
+        width: { max: "0.5fr", min: "142px" },
       },
     ],
     defaultSort: {

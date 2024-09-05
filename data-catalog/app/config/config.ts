@@ -1,6 +1,7 @@
 import { setConfig } from "@databiosphere/findable-ui/lib/config/config";
 import { SiteConfig } from "@databiosphere/findable-ui/lib/config/entities";
 import brcAnalyticsCatalogLocal from "../../site-config/brc-analytics-catalog/local/config";
+
 const CONFIGS: { [k: string]: SiteConfig } = {
   "brc-analytics-catalog-local": brcAnalyticsCatalogLocal,
 };
