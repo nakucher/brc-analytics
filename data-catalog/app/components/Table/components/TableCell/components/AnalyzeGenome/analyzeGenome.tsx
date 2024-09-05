@@ -2,7 +2,7 @@ import {
   ANCHOR_TARGET,
   REL_ATTRIBUTE,
 } from "@databiosphere/findable-ui/lib/components/Links/common/entities";
-import { Button } from "@mui/material";
+import { Button, Tooltip } from "@mui/material";
 import Router from "next/router";
 import { ROUTES } from "../../../../../../../routes/contants";
 import { BRCDataCatalogGenome } from "../../../../../../apis/catalog/brc-analytics-catalog/common/entities";
@@ -35,22 +35,24 @@ export const AnalyzeGenome = ({ genome }: AnalyzeGenomeProps): JSX.Element => {
     <StyledButtonGroup
       {...BUTTON_GROUP_PROPS}
       Buttons={[
-        <Button
-          {...BUTTON_PROPS}
-          disabled={!genomeVersionAssemblyId}
-          key="analyze"
-          onClick={(): void => onAnalyze(genomeVersionAssemblyId)}
-        >
-          <AnalyzeGenomeIcon {...ICON_PROPS} />
-        </Button>,
-        <Button
-          {...BUTTON_PROPS}
-          disabled={!ucscBrowserUrl}
-          key="view"
-          onClick={(): void => onView(ucscBrowserUrl)}
-        >
-          <ViewGenomeIcon {...ICON_PROPS} />
-        </Button>,
+        <Tooltip key="analyze" title="Analyze">
+          <Button
+            {...BUTTON_PROPS}
+            disabled={!genomeVersionAssemblyId}
+            onClick={(): void => onAnalyze(genomeVersionAssemblyId)}
+          >
+            <AnalyzeGenomeIcon {...ICON_PROPS} />
+          </Button>
+        </Tooltip>,
+        <Tooltip key="view" title="UCSC Genome Browser">
+          <Button
+            {...BUTTON_PROPS}
+            disabled={!ucscBrowserUrl}
+            onClick={(): void => onView(ucscBrowserUrl)}
+          >
+            <ViewGenomeIcon {...ICON_PROPS} />
+          </Button>
+        </Tooltip>,
       ]}
     />
   );
