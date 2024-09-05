@@ -1188,28 +1188,6 @@
     "vEuPathDbProject": "TriTrypDB"
   },
   {
-    "chromosomes": 41,
-    "contigs": 0,
-    "genomeVersionAssemblyId": "GCA_000209065.1",
-    "organism": "Trypanosoma cruzi CL Brener Esmeraldo-like",
-    "species": "Trypanosoma cruzi",
-    "strain": "CL Brener Esmeraldo-like",
-    "supercontigs": 0,
-    "ucscBrowserUrl": "https://genome.ucsc.edu/h/GCF_000209065.1",
-    "vEuPathDbProject": "TriTrypDB"
-  },
-  {
-    "chromosomes": 41,
-    "contigs": 0,
-    "genomeVersionAssemblyId": "GCA_000209065.1",
-    "organism": "Trypanosoma cruzi CL Brener Non-Esmeraldo-like",
-    "species": "Trypanosoma cruzi",
-    "strain": "CL Brener Non-Esmeraldo-like",
-    "supercontigs": 0,
-    "ucscBrowserUrl": "https://genome.ucsc.edu/h/GCF_000209065.1",
-    "vEuPathDbProject": "TriTrypDB"
-  },
-  {
     "chromosomes": 0,
     "contigs": 0,
     "genomeVersionAssemblyId": "GCA_000209125.2",
