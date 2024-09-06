@@ -20,8 +20,7 @@ export const StyledSection = styled(Section)`
 
   svg {
     left: 0;
-    position: fixed;
-    z-index: -1;
+    position: absolute;
   }
 `;
 

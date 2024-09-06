@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { ROUTES } from "../../../../../../../routes/contants";
 import { Hero } from "../../../../../Layout/components/Hero/hero";
 import {
@@ -14,7 +14,9 @@ import {
 export const SectionHero = (): JSX.Element => {
   return (
     <Section>
-      <Hero />
+      <Box sx={{ position: "sticky", top: 0 }}>
+        <Hero />
+      </Box>
       <SectionLayout>
         <Headline>
           <Head>
