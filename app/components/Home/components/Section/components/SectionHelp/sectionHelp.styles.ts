@@ -1,5 +1,8 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import {
+  smokeMain,
+  white,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import {
   Section,
@@ -12,6 +15,7 @@ import {
 
 export const StyledSection = styled(Section)`
   background-color: ${white};
+  border-top: 1px solid ${smokeMain};
 `;
 
 export const SectionLayout = styled(DefaultLayout)`

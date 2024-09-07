@@ -5,7 +5,6 @@ import { ErrorBoundary } from "@databiosphere/findable-ui/lib/components/ErrorBo
 import { Head } from "@databiosphere/findable-ui/lib/components/Head/head";
 import { AppLayout as DXAppLayout } from "@databiosphere/findable-ui/lib/components/Layout/components/AppLayout/appLayout.styles";
 import { Floating } from "@databiosphere/findable-ui/lib/components/Layout/components/Floating/floating";
-import { Footer } from "@databiosphere/findable-ui/lib/components/Layout/components/Footer/footer";
 import { Header as DXHeader } from "@databiosphere/findable-ui/lib/components/Layout/components/Header/header";
 import { Main as DXMain } from "@databiosphere/findable-ui/lib/components/Layout/components/Main/main";
 import { ConfigProvider as DXConfigProvider } from "@databiosphere/findable-ui/lib/providers/config";
@@ -18,6 +17,7 @@ import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
+import { StyledFooter } from "../app/components/Layout/components/Footer/footer.styles";
 import { config } from "../app/config/config";
 import { mergeAppTheme } from "../app/theme/theme";
 
@@ -80,7 +80,7 @@ function MyApp({ Component, pageProps }: AppPropsWithComponent): JSX.Element {
                     </ErrorBoundary>
                   </Main>
                 </ExploreStateProvider>
-                <Footer {...footer} />
+                <StyledFooter {...footer} />
               </AppLayout>
             </LayoutStateProvider>
           </SystemStatusProvider>

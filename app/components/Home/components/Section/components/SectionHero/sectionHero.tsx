@@ -1,10 +1,10 @@
 import { Button } from "@mui/material";
 import { ROUTES } from "../../../../../../../routes/constants";
+import { Section } from "../../section.styles";
 import {
   Head,
   Headline,
   SectionLayout,
-  StyledSection as Section,
   Subhead,
   SubHeadline,
   SubHeadlinePositioner,
