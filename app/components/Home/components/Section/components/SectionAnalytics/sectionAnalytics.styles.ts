@@ -1,4 +1,7 @@
-import { smokeLightest } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import {
+  smokeLightest,
+  smokeMain,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import {
   Section,
@@ -8,6 +11,7 @@ import {
 
 export const StyledSection = styled(Section)`
   background-color: ${smokeLightest};
+  border-top: 1px solid ${smokeMain};
   overflow: hidden;
 `;
 
