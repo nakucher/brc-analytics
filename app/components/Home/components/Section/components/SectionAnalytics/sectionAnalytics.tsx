@@ -1,10 +1,6 @@
 import { SectionSubtitle, SectionTitle } from "../../section.styles";
 import { AnalyticsTools } from "./components/AnalyticsTools/analyticsTools";
-import {
-  Headline,
-  SectionLayout,
-  StyledSection as Section,
-} from "./sectionAnalytics.styles";
+import { Headline, Section, SectionLayout } from "./sectionAnalytics.styles";
 
 export const SectionAnalytics = (): JSX.Element => {
   return (

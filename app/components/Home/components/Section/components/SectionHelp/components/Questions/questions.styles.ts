@@ -7,7 +7,7 @@ import {
 import { elevation01 } from "@databiosphere/findable-ui/lib/theme/common/shadows";
 import styled from "@emotion/styled";
 import { Accordion as MAccordion } from "@mui/material";
-import { sectionGrid } from "../../../../section.styles";
+import { sectionGrid } from "../../../../../../../Layout/components/AppLayout/components/Section/section.styles";
 
 export const Grid = styled.div`
   ${sectionGrid};

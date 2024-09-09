@@ -47,7 +47,10 @@ export function makeConfig(browserUrl: string): SiteConfig {
         }),
         navigation: [
           undefined,
-          [{ label: "Datasets", url: ROUTES.GENOMES }],
+          [
+            { label: "Datasets", url: ROUTES.GENOMES },
+            { label: "About", url: ROUTES.ABOUT },
+          ],
           undefined,
         ],
       },

@@ -5,17 +5,19 @@ import {
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import {
-  Section,
   sectionGrid,
-  SectionHeadline,
   SectionLayout as DefaultLayout,
+} from "../../../../../Layout/components/AppLayout/components/Section/section.styles";
+import {
+  SectionHeadline,
   SectionSubtitle,
   SectionTitle,
 } from "../../section.styles";
 
-export const StyledSection = styled(Section)`
+export const Section = styled.section`
   background-color: ${white};
   border-top: 1px solid ${smokeMain};
+  width: 100%;
 `;
 
 export const SectionLayout = styled(DefaultLayout)`

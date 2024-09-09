@@ -2,8 +2,8 @@ import { Link as DXLink } from "@databiosphere/findable-ui/lib/components/Links/
 import { Questions } from "./components/Questions/questions";
 import {
   Headline,
+  Section,
   SectionLayout,
-  StyledSection as Section,
   StyledSectionSubTitle,
   StyledSectionTitle,
 } from "./sectionHelp.styles";
