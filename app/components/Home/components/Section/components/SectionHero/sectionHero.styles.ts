@@ -8,7 +8,7 @@ import styled from "@emotion/styled";
 import {
   sectionGrid,
   SectionLayout as DefaultLayout,
-} from "../../section.styles";
+} from "../../../../../Layout/components/AppLayout/components/Section/section.styles";
 
 export const SectionLayout = styled(DefaultLayout)`
   ${sectionGrid};

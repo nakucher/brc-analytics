@@ -3,16 +3,14 @@ import {
   smokeMain,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
-import {
-  Section,
-  SectionHeadline,
-  SectionLayout as DefaultLayout,
-} from "../../section.styles";
+import { SectionLayout as DefaultLayout } from "../../../../../Layout/components/AppLayout/components/Section/section.styles";
+import { SectionHeadline } from "../../section.styles";
 
-export const StyledSection = styled(Section)`
+export const Section = styled.section`
   background-color: ${smokeLightest};
   border-top: 1px solid ${smokeMain};
   overflow: hidden;
+  width: 100%;
 `;
 
 export const SectionLayout = styled(DefaultLayout)`

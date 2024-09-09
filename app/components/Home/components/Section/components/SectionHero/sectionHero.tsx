@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { ROUTES } from "../../../../../../../routes/constants";
-import { Section } from "../../section.styles";
+import { Section } from "../../../../../Layout/components/AppLayout/components/Section/section.styles";
 import {
   Head,
   Headline,

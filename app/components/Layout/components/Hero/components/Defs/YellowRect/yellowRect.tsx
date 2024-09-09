@@ -12,10 +12,14 @@ import {
 } from "../../../common/utils";
 
 export interface YellowRectProps {
+  gridShift?: number;
   gridSize: number;
 }
 
-export const YellowRect = ({ gridSize }: YellowRectProps): JSX.Element => {
+export const YellowRect = ({
+  gridShift = 2,
+  gridSize,
+}: YellowRectProps): JSX.Element => {
   return (
     <defs>
       <g id={ELEMENT_ID.GROUP_YELLOW_RECT}>
@@ -37,7 +41,7 @@ export const YellowRect = ({ gridSize }: YellowRectProps): JSX.Element => {
         id={ELEMENT_ID.PATTERN_YELLOW_RECT}
         patternUnits={PATTERN_UNIT.USER_SPACE_ON_USE}
         width={gridSize * 8}
-        x={gridSize * 2 - SHAPE_WIDTH.YELLOW_RECT / 2}
+        x={gridSize * gridShift - SHAPE_WIDTH.YELLOW_RECT / 2}
         y={0}
       >
         <use href={getElementHref(ELEMENT_ID.GROUP_YELLOW_RECT)} />

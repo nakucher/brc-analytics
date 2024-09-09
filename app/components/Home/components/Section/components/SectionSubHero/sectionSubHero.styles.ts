@@ -6,14 +6,14 @@ import { textBodySmall500 } from "@databiosphere/findable-ui/lib/styles/common/m
 import styled from "@emotion/styled";
 import { Chip as MChip } from "@mui/material";
 import {
-  Section,
   sectionGrid,
   SectionLayout as DefaultLayout,
-} from "../../section.styles";
+} from "../../../../../Layout/components/AppLayout/components/Section/section.styles";
 
-export const StyledSection = styled(Section)`
+export const Section = styled.section`
   background-color: ${white};
   border-top: 1px solid ${smokeMain};
+  width: 100%;
 `;
 
 export const SectionLayout = styled(DefaultLayout)`

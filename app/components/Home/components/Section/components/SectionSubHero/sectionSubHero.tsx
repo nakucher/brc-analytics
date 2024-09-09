@@ -1,7 +1,7 @@
 import {
+  Section,
   SectionLayout,
   StyledChip,
-  StyledSection as Section,
   Subhead,
 } from "./sectionSubHero.styles";
 
