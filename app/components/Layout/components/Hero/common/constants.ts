@@ -1,7 +1,7 @@
 export const ANIMATE_MOTION = {
-  begin: "1s",
-  dur: "40s",
-  repeatCount: "indefinite",
+  begin: "0",
+  dur: "0",
+  repeatCount: "0",
 };
 
 export const FILL = {
