@@ -1,4 +1,7 @@
-import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import {
+  smokeMain,
+  white,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { textBodySmall500 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import { Chip as MChip } from "@mui/material";
@@ -10,6 +13,7 @@ import {
 
 export const StyledSection = styled(Section)`
   background-color: ${white};
+  border-top: 1px solid ${smokeMain};
 `;
 
 export const SectionLayout = styled(DefaultLayout)`

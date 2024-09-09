@@ -2,21 +2,13 @@ import {
   mediaDesktopSmallUp,
   mediaTabletUp,
 } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  inkLight,
-  smokeLightest,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { textBodyLarge400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
 import {
-  Section,
   sectionGrid,
   SectionLayout as DefaultLayout,
 } from "../../section.styles";
-
-export const StyledSection = styled(Section)`
-  background: url("/hero/hero.svg") 0 0 repeat, ${smokeLightest};
-`;
 
 export const SectionLayout = styled(DefaultLayout)`
   ${sectionGrid};
