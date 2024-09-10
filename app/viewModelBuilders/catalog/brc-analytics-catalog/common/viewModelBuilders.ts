@@ -55,16 +55,17 @@ export const buildContigs = (
  * @param cardProps - Card properties.
  * @param cardProps.text - Card text.
  * @param cardProps.title - Card title.
+ * @param cardProps.url - Card url.
  * @returns Props to be used for the AnalysisMethod component.
  */
 export const buildGenomeAnalysisMethod = (
   genome: BRCDataCatalogGenome,
-  { text, title }: Partial<CardProps>
+  { text, title, url }: Partial<CardProps> & { url: string }
 ): ComponentProps<typeof C.AnalysisMethod> => {
   return {
     text,
     title,
-    url: "",
+    url,
   };
 };
 

@@ -21,6 +21,7 @@ export const mainColumn: ComponentsConfig = [
           V.buildGenomeAnalysisMethod(r, {
             text: MDX.VariantCalling({}),
             title: "Variant calling",
+            url: "",
           }),
       },
       {
@@ -29,6 +30,7 @@ export const mainColumn: ComponentsConfig = [
           V.buildGenomeAnalysisMethod(r, {
             text: MDX.Transcriptomics({}),
             title: "Transcriptomics",
+            url: "",
           }),
       },
       {
@@ -37,6 +39,7 @@ export const mainColumn: ComponentsConfig = [
           V.buildGenomeAnalysisMethod(r, {
             text: MDX.Regulation({}),
             title: "Regulation",
+            url: "",
           }),
       },
       {
@@ -45,6 +48,7 @@ export const mainColumn: ComponentsConfig = [
           V.buildGenomeAnalysisMethod(r, {
             text: MDX.Assembly({}),
             title: "Assembly",
+            url: "",
           }),
       },
       {
@@ -53,6 +57,7 @@ export const mainColumn: ComponentsConfig = [
           V.buildGenomeAnalysisMethod(r, {
             text: MDX.GenomeComparisons({}),
             title: "Genome comparisons",
+            url: "",
           }),
       },
       {
@@ -61,6 +66,7 @@ export const mainColumn: ComponentsConfig = [
           V.buildGenomeAnalysisMethod(r, {
             text: MDX.ProteinFolding({}),
             title: "Protein folding",
+            url: "",
           }),
       },
     ],
