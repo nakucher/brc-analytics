@@ -1,7 +1,14 @@
-import { inkLight } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
+import {
+  inkLight,
+  smokeMain,
+} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import { textBodyLarge4002Lines } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
 import styled from "@emotion/styled";
-import { SectionContent, SectionLayout } from "../../section.styles";
+import { Section, SectionContent, SectionLayout } from "../../section.styles";
+
+export const StyledSection = styled(Section)`
+  border-top: 1px solid ${smokeMain};
+`;
 
 export const StyledSectionLayout = styled(SectionLayout)`
   padding: 106px 16px 204px;

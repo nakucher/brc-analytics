@@ -1,18 +1,14 @@
-import {
-  Section,
-  Subhead,
-  SubHeadline,
-  SubheadText,
-} from "../../section.styles";
+import { Subhead, SubHeadline, SubheadText } from "../../section.styles";
 import { Expectations } from "./components/MDX";
 import {
   StyledContent,
+  StyledSection,
   StyledSectionLayout,
 } from "./sectionWhatToExpect.styles";
 
 export const SectionWhatToExpect = (): JSX.Element => {
   return (
-    <Section>
+    <StyledSection>
       <StyledSectionLayout>
         <SubHeadline>
           <Subhead>What to expect</Subhead>
@@ -24,6 +20,6 @@ export const SectionWhatToExpect = (): JSX.Element => {
           <Expectations />
         </StyledContent>
       </StyledSectionLayout>
-    </Section>
+    </StyledSection>
   );
 };
