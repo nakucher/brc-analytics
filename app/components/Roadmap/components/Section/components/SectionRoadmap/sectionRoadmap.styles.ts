@@ -49,10 +49,10 @@ export const CategoryText = styled.div`
 
   .MuiLink-root {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 `;

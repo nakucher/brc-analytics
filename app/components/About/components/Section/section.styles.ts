@@ -1,9 +1,5 @@
 import { mediaTabletUp } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
-import {
-  inkLight,
-  white,
-} from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
-import { textBodyLarge400 } from "@databiosphere/findable-ui/lib/styles/common/mixins/fonts";
+import { white } from "@databiosphere/findable-ui/lib/styles/common/mixins/colors";
 import styled from "@emotion/styled";
 import {
   sectionGrid,
@@ -39,12 +35,6 @@ export const Subhead = styled.h2`
   letter-spacing: -0.4px;
   line-height: 48px;
   margin: 0;
-`;
-
-export const SubheadText = styled.div`
-  ${textBodyLarge400};
-  color: ${inkLight};
-  grid-column: 1 / -1;
 `;
 
 export const SectionContent = styled.div`
