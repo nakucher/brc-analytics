@@ -81,7 +81,7 @@ export const buildGenomeAnalysisPortals = (
       {
         imageProps: {
           alt: GENOME_BROWSER,
-          src: "/analysis-portals/ucsc-genome.svg",
+          src: "/analysis-portals/ucsc-genome.png",
           width: 20,
         },
         label: GENOME_BROWSER,
@@ -205,7 +205,7 @@ function getGenomeEntityChooseAnalysisMethodBreadcrumbs(
   genome: BRCDataCatalogGenome
 ): Breadcrumb[] {
   return [
-    { path: ROUTES.GENOMES, text: "Genomes" },
+    { path: ROUTES.ORGANISMS, text: "Organisms" },
     { path: "", text: `${genome.species} - ${genome.strain}` },
     { path: "", text: "Choose Analysis Methods" },
   ];

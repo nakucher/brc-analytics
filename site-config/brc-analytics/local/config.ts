@@ -49,7 +49,7 @@ export function makeConfig(browserUrl: string): SiteConfig {
           undefined,
           [
             { label: "Roadmap", url: ROUTES.ROADMAP },
-            { label: "Datasets", url: ROUTES.GENOMES },
+            { label: "Datasets", url: ROUTES.ORGANISMS },
             { label: "About", url: ROUTES.ABOUT },
           ],
           undefined,

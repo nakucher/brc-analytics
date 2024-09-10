@@ -23,7 +23,7 @@ export const AnalyzeGenome = ({ genome }: AnalyzeGenomeProps): JSX.Element => {
   const { genomeVersionAssemblyId, ucscBrowserUrl } = genome;
 
   const onAnalyze = (entityId: string): void => {
-    Router.push(`${ROUTES.GENOMES}/${entityId}`);
+    Router.push(`${ROUTES.ORGANISMS}/${entityId}`);
   };
 
   const onView = (url: string | null): void => {

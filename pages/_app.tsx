@@ -21,7 +21,7 @@ import { StyledFooter } from "../app/components/Layout/components/Footer/footer.
 import { config } from "../app/config/config";
 import { mergeAppTheme } from "../app/theme/theme";
 
-const DEFAULT_ENTITY_LIST_TYPE = "genomes";
+const DEFAULT_ENTITY_LIST_TYPE = "organisms";
 
 export interface PageProps extends AzulEntitiesStaticResponse {
   pageTitle?: string;
