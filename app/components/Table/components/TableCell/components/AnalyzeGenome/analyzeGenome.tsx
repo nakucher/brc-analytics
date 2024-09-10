@@ -23,7 +23,7 @@ export const AnalyzeGenome = ({ genome }: AnalyzeGenomeProps): JSX.Element => {
   const { genomeVersionAssemblyId, ucscBrowserUrl } = genome;
 
   const onAnalyze = (entityId: string): void => {
-    Router.push(`${ROUTES.GENOMES}/${entityId}`);
+    Router.push(`${ROUTES.ORGANISMS}/${entityId}`);
   };
 
   const onView = (url: string | null): void => {
@@ -44,13 +44,26 @@ export const AnalyzeGenome = ({ genome }: AnalyzeGenomeProps): JSX.Element => {
             <AnalyzeGenomeIcon {...ICON_PROPS} />
           </Button>
         </Tooltip>,
-        <Tooltip key="view" title="UCSC Genome Browser">
+        <Tooltip key="view-browser" title="UCSC Genome Browser">
           <Button
             {...BUTTON_PROPS}
             disabled={!ucscBrowserUrl}
             onClick={(): void => onView(ucscBrowserUrl)}
           >
             <ViewGenomeIcon {...ICON_PROPS} />
+          </Button>
+        </Tooltip>,
+        <Tooltip key="view-datasets" title="NCBI datasets">
+          <Button
+            {...BUTTON_PROPS}
+            disabled={!genomeVersionAssemblyId}
+            onClick={(): void =>
+              onView(
+                `https://www.ncbi.nlm.nih.gov/datasets/genome/${genomeVersionAssemblyId}`
+              )
+            }
+          >
+            NCBI
           </Button>
         </Tooltip>,
       ]}

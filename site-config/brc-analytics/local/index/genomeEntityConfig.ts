@@ -19,6 +19,7 @@ import {
 import { mainColumn as analysisMethodsMainColumn } from "../entity/genome/analysisMethodMainColumn";
 import { sideColumn as analysisMethodsSideColumn } from "../entity/genome/analysisMethodsSideColumn";
 import { top as analysisMethodsTop } from "../entity/genome/analysisMethodsTop";
+import { listHero } from "../listView/listHero";
 
 /**
  * Entity config object responsible to config anything related to the /genomes route.
@@ -63,10 +64,10 @@ export const genomeEntityConfig: BRCEntityConfig<BRCDataCatalogGenome> = {
     ],
   },
   exploreMode: EXPLORE_MODE.CS_FETCH_CS_FILTERING,
-  explorerTitle: "Genomes",
+  explorerTitle: "Organisms",
   getId: getGenomeId,
   getTitle: getGenomeTitle,
-  label: "Genomes",
+  label: "Organisms",
   list: {
     columns: [
       {
@@ -153,7 +154,8 @@ export const genomeEntityConfig: BRCEntityConfig<BRCDataCatalogGenome> = {
     disablePagination: true,
     enableDownload: true,
     enableTab: false,
+    listHero,
   },
-  route: "genomes",
+  route: "organisms",
   staticLoadFile: "files/out/genomes.json",
 };

@@ -15,10 +15,12 @@ export const Section = styled.section`
 
 export const SectionLayout = styled(DefaultLayout)`
   ${sectionGrid};
+  min-height: 184px;
   padding: 56px 16px;
 `;
 
 export const Headline = styled.div`
+  align-content: flex-start;
   display: grid;
   gap: 8px;
   grid-column: 1 / -1;
@@ -36,4 +38,13 @@ export const Subhead = styled.div`
   ${textBodyLarge400};
   color: ${inkLight};
   margin: 0;
+
+  .MuiLink-root {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 `;

@@ -30,9 +30,11 @@ export const SectionHero = ({
           <Breadcrumbs breadcrumbs={breadcrumbs} />
           <Head>{head}</Head>
         </Headline>
-        <SubHeadline>
-          <Subhead>{subHead}</Subhead>
-        </SubHeadline>
+        {subHead && (
+          <SubHeadline>
+            <Subhead>{subHead}</Subhead>
+          </SubHeadline>
+        )}
       </SectionLayout>
     </Section>
   );

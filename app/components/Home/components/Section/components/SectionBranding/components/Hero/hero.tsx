@@ -46,8 +46,8 @@ export const Hero = ({
       {[
         ELEMENT_ID.PATTERN_SMOKE_RECT,
         ELEMENT_ID.PATTERN_SMOKE_CIRCLE,
-        ELEMENT_ID.PATTERN_BLUE_RECT,
-        ELEMENT_ID.PATTERN_YELLOW_RECT,
+        // ELEMENT_ID.PATTERN_BLUE_RECT,
+        // ELEMENT_ID.PATTERN_YELLOW_RECT,
       ].map((elementId) => (
         <Fragment key={elementId}>
           <rect
@@ -59,7 +59,7 @@ export const Hero = ({
           />
         </Fragment>
       ))}
-      <use href={getElementHref(ELEMENT_ID.GROUP_BLUE_CIRCLE)} x={0} />
+      {/*<use href={getElementHref(ELEMENT_ID.GROUP_BLUE_CIRCLE)} x={0} />*/}
       <use href={getElementHref(ELEMENT_ID.GROUP_CORAL_PINK_CIRLCLE)} />
     </svg>
   );

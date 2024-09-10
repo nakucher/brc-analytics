@@ -1,1 +1,1 @@
-export const GENOME_BROWSER = "Genome Browser";
+export const GENOME_BROWSER = "UCSC Genome Browser";

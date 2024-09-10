@@ -1,19 +1,19 @@
 import { GetStaticProps } from "next";
 import { StyledPagesMain } from "../../app/components/Layout/components/Main/main.styles";
-import { AboutView } from "../../app/views/AboutView/aboutView";
+import { RoadmapView } from "../../app/views/RoadmapView/roadmapView";
 
-export const About = (): JSX.Element => {
-  return <AboutView />;
+export const Roadmap = (): JSX.Element => {
+  return <RoadmapView />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
-      pageTitle: "About",
+      pageTitle: "Roadmap",
     },
   };
 };
 
-export default About;
+export default Roadmap;
 
-About.Main = StyledPagesMain;
+Roadmap.Main = StyledPagesMain;
