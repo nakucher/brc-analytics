@@ -1,5 +1,6 @@
 import { mediaTabletDown } from "@databiosphere/findable-ui/lib/styles/common/mixins/breakpoints";
 import styled from "@emotion/styled";
+import { Typography } from "@mui/material";
 
 export const Brands = styled.div`
   align-items: center;
@@ -24,4 +25,8 @@ export const LargeBrand = styled.div`
 
 export const SmallBrand = styled.div`
   padding: 4px;
+`;
+
+export const FooterText = styled(Typography)`
+  max-width: 400px;
 `;

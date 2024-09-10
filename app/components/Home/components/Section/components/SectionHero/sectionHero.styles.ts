@@ -13,7 +13,7 @@ import {
 export const SectionLayout = styled(DefaultLayout)`
   ${sectionGrid};
   align-content: flex-end;
-  min-height: 482px;
+  min-height: 400px;
   padding: 56px 16px;
 `;
 
@@ -63,4 +63,17 @@ export const Subhead = styled.h2`
   ${textBodyLarge400};
   color: ${inkLight};
   margin: 0;
+
+  span {
+    display: block;
+    margin: 8px 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 `;
