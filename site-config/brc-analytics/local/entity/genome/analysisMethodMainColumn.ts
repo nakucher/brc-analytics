@@ -7,6 +7,15 @@ export const mainColumn: ComponentsConfig = [
   {
     children: [
       {
+        component: C.FluidAlert,
+        props: {
+          severity: "warning",
+          title:
+            "We are in the process of adopting these workflows to the needs of the pathogen community.",
+          variant: "banner",
+        },
+      },
+      {
         component: C.AnalysisMethod,
         viewBuilder: (r) =>
           V.buildGenomeAnalysisMethod(r, {

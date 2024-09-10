@@ -45,8 +45,7 @@ export const Questions = (): JSX.Element => {
           longer available, what can I do? Many types of analyses are possible
           via integration with the{" "}
           <DXLink label="Galaxy system" url={URLS.GALAXY_SYSTEM} /> while we
-          continue to build this new BRC resource. Click the “Analytics” link at
-          the top.
+          continue to build this new BRC resource.
         </MAccordionDetails>
       </StyledAccordion>
       <StyledAccordion component={DXRoundedPaper}>
