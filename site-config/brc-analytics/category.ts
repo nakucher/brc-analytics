@@ -14,7 +14,7 @@ export const BRC_DATA_CATALOG_CATEGORY_LABEL = {
   ANALYZE_GENOME: "Action",
   CHROMOSOMES: "Chromosomes",
   CONTIGS: "Contigs",
-  GENOME_VERSION_ASSEMBLY_ID: "Genome Version/Assembly ID",
+  GENOME_VERSION_ASSEMBLY_ID: "Assembly Version ID",
   SPECIES: "Species",
   STRAIN: "Strain",
   SUPERCONTIGS: "Supercontigs",
